@@ -10,6 +10,8 @@
 - Ubuntu base image
 - Plus:
   - eicar
+    bzip2
+    xz-utils
   - webfs
   - tmux
   - python3-minimal
