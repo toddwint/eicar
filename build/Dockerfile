@@ -1,4 +1,4 @@
-FROM toddwint/transfer
+FROM toddwint/mybaseimage
 COPY app /opt/eicar
 ENV DEBIAN_FRONTEND=noninteractive \
     TZ=UTC \
@@ -8,26 +8,15 @@ ENV DEBIAN_FRONTEND=noninteractive \
     HTTPPORT4=8083 \
     HOSTNAME=eicarsrvr \
     APPNAME=eicar
-RUN echo $HOSTNAME > /etc/hostname \
-    && \
-    cd /opt \
-    && \
-    rm -rf /opt/transfer \
-    && \
-    apt-get update \
+RUN apt-get update \
     && \
     apt-get install -y \
     bzip2 \
     xz-utils \
+    webfs \
     && \
-#    apt-get remove -y \
-#    rsyslog \
-#    isc-dhcp-server \
-#    ftp \
-#    vsftpd \
-#    tftp-hpa \
-#    tftpd-hpa \
-#    && \
+    echo $HOSTNAME > /etc/hostname \
+    && \
     apt-get autoremove -y \
     && \
     rm -rf /var/lib/apt/lists/*
