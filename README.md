@@ -5,6 +5,14 @@
 `eicar` docker image for simple lab testing applications.
 
 
+## Overview
+
+- Download the docker image and github files.
+- Configure the settings in `run/config.txt`.
+- Start a new container by running `run/create_container.sh`.
+- Open the file webadmin.html to download EICAR test virus.
+
+
 ## Features
 
 - Ubuntu base image
