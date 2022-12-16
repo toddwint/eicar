@@ -6,6 +6,10 @@ source "${SCRIPTDIR}"/config.txt
 docker container stop "$HOSTNAME"
 docker container rm "$HOSTNAME"
 
+# Delete remote network routes
+IFS=',' # Internal Field Separator
+for ROUTE in $ROUTES; do sudo ip route del "$ROUTE" via "$GATEWAY"; done
+
 # Remove the IP on the interface
 IPASSIGNED=$(ip addr show $INTERFACE | grep $IPADDR)
 if [ -n "$IPASSIGNED" ]; then
@@ -14,10 +18,6 @@ if [ -n "$IPASSIGNED" ]; then
 else
     echo 'IP is not assigned to the interface'
 fi
-
-# Delete remote network routes
-IFS=',' # Internal Field Separator
-for ROUTE in $ROUTES; do sudo ip route del "$ROUTE" via "$GATEWAY"; done
 
 # Remove the webadmin.html customized file
 rm -rf "$SCRIPTDIR"/webadmin.html
