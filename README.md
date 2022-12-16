@@ -18,8 +18,8 @@
 - Ubuntu base image
 - Plus:
   - eicar
-    bzip2
-    xz-utils
+  - bzip2
+  - xz-utils
   - webfs
   - tmux
   - python3-minimal
@@ -51,7 +51,7 @@ INTERFACE=eth0
 # The IP address that will be set on the host and NAT'd to the container
 IPADDR=192.168.10.1
 
-# The IP subnet in the form subnet/cidr
+# The IP subnet in the form NETWORK/PREFIX
 SUBNET=192.168.10.0/24
 
 # The IP of the gateway
