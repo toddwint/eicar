@@ -26,6 +26,7 @@ docker run -dit \
     -p "$IPADDR":"$HTTPPORT2":"$HTTPPORT2" \
     -p "$IPADDR":"$HTTPPORT3":"$HTTPPORT3" \
     -p "$IPADDR":"$HTTPPORT4":"$HTTPPORT4" \
+    -e IPADDR="$IPADDR" \
     -e TZ="$TZ" \
     -e HTTPPORT1="$HTTPPORT1" \
     -e HTTPPORT2="$HTTPPORT2" \

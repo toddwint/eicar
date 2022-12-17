@@ -82,7 +82,7 @@ fi
 # Print location of files to user
 echo "Here are the eicar files on the server" >> /opt/"$APPNAME"/logs/"$APPNAME".log
 ls /opt/"$APPNAME"/public/*eicar* >> /opt/"$APPNAME"/logs/"$APPNAME".log
-echo "You can download them by going to http://<thisserverip>:80" >> /opt/"$APPNAME"/logs/"$APPNAME".log
+echo "You can download them by going to http://${IPADDR}:80" >> /opt/"$APPNAME"/logs/"$APPNAME".log
 
 # Start services
 service webfs start
