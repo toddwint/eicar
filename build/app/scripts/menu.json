@@ -1,0 +1,86 @@
+[
+ [
+  "Launch tmux",
+  "/opt/eicar/scripts/tmux.sh"
+ ],
+ [
+  "Search logs",
+  [
+   [
+    "eicar log",
+    "tail -F -n +1 /opt/eicar/logs/eicar.log | fzf --tac --no-sort"
+   ],
+   [
+    "webfsd log",
+    "tail -F -n +1 /opt/eicar/logs/webfsd.log | fzf --tac --no-sort"
+   ]
+  ]
+ ],
+ [
+  "View logs",
+  [
+   [
+    "eicar log",
+    "more /opt/eicar/logs/eicar.log"
+   ],
+   [
+    "webfsd log",
+    "more /opt/eicar/logs/webfsd.log"
+   ]
+  ]
+ ],
+ [
+  "View configuration",
+  [
+   [
+    "webfsd configuration",
+    "more /etc/webfsd.conf"
+   ],
+   [
+    "IP addresses",
+    "ip addr show | more"
+   ],
+   [
+    "Routing table",
+    "ip route show | more"
+   ],
+   [
+    "ARP or NDISC cache",
+    "ip neighbor show | more"
+   ],
+   [
+    "Network devices",
+    "ip link show | more"
+   ]
+  ]
+ ],
+ [
+  "Debug scripts",
+  [
+   [
+    "Show processes",
+    "ps ax | more"
+   ],
+   [
+    "Show sockets",
+    "ss --all --numeric --processes | more"
+   ],
+   [
+    "ttyd1 log",
+    "more /opt/eicar/logs/ttyd1.log"
+   ],
+   [
+    "ttyd2 log",
+    "more /opt/eicar/logs/ttyd2.log"
+   ],
+   [
+    "frontail log",
+    "more /opt/eicar/logs/frontail.log"
+   ],
+   [
+    "tailon log",
+    "more /opt/eicar/logs/tailon.log"
+   ]
+  ]
+ ]
+]
