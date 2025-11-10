@@ -2,7 +2,7 @@ name: ${HOSTNAME}
 
 services:
   eicar:
-    image: toddwint/eicar
+    image: toddwint/${APPNAME}
     hostname: ${HOSTNAME}
     ports:
         - "${IPADDR}:80:80/tcp"
